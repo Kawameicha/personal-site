@@ -48,7 +48,7 @@ export const pillars = [
 ];
 
 export const projects = [
-//  {
+  {
   //  slug: "sepsis-prediction",
   //  title: "Early Sepsis Detection at Scale",
   //  context:
@@ -60,7 +60,7 @@ export const projects = [
   // tags: ["Machine Learning", "Clinical Validation"],
   //  year: "2022",
   //  featured: true,
-  //},
+  },
 ];
 
 export const articles = [
