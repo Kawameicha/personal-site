@@ -49,17 +49,17 @@ export const pillars = [
 
 export const projects = [
   {
-  //  slug: "sepsis-prediction",
-  //  title: "Early Sepsis Detection at Scale",
-  //  context:
-  //    "",
-  //  approach:
-  //    "",
-  //  impact:
-  //    "",
-  // tags: ["Machine Learning", "Clinical Validation"],
-  //  year: "2022",
-  //  featured: true,
+    slug: "sepsis-prediction",
+    title: "Early Sepsis Detection at Scale",
+    context:
+      "",
+    approach:
+      "",
+    impact:
+      "",
+   tags: ["Machine Learning", "Clinical Validation"],
+    year: "2022",
+    featured: true,
   },
 ];
 
