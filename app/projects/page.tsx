@@ -5,7 +5,7 @@ import { projects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected work in clinical AI, data infrastructure, and health systems.",
+  description: "Where AI moves beyond prototypes into systems that actually operate in healthcare.",
 };
 
 export default function ProjectsPage() {
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed font-sans font-light">
-          Real-world work and what it takes to make systems operate outside the slide deck.
+          Moving beyond prototypes and what it takes to operate outside the slide deck.
         </p>
       </div>
 

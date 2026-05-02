@@ -233,9 +233,8 @@ export default function HomePage() {
             Working on something difficult?
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-sans font-light">
-            I take on a small number of advisory and consulting engagements each
-            year. If you're building AI for healthcare and want to do it
-            properly, I'd be glad to talk.
+            Most AI in healthcare fails because of systems, not models. If you're working
+            on something where that matters, I’m always open to a serious conversation.
           </p>
           <Link
             href="/contact"

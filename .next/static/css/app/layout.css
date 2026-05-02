@@ -852,6 +852,9 @@ a{
 .bg-border{
   background-color: hsl(var(--border));
 }
+.bg-card{
+  background-color: hsl(var(--card));
+}
 .bg-foreground{
   background-color: hsl(var(--foreground));
 }
@@ -860,6 +863,9 @@ a{
 }
 .p-2{
   padding: 0.5rem;
+}
+.p-6{
+  padding: 1.5rem;
 }
 .p-8{
   padding: 2rem;

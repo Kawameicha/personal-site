@@ -49,18 +49,30 @@ export const pillars = [
 
 export const projects = [
   {
-    slug: "sepsis-prediction",
-    title: "Early Sepsis Detection at Scale",
-    context:
-      "",
-    approach:
-      "",
-    impact:
-      "",
-   tags: ["Machine Learning", "Clinical Validation"],
-    year: "2022",
+    slug: "flowjo-plugin-single-cell-analysis",
+    title: "Scaling Single-Cell Analysis Beyond Manual Workflows",
+    year: "2019 – Present",
     featured: true,
-  },
+    oneLiner:
+      "Custom analytical tooling to extend FlowJo for high-dimensional single-cell data and enable reproducible workflows.",
+      
+    context:
+      "During the rapid expansion of single-cell technologies, analytical complexity outpaced the capabilities of existing tools. Researchers relied heavily on manual gating and ad hoc workflows, limiting reproducibility and scalability. There was a clear gap between what the data contained and what the software ecosystem could extract in practice.",
+
+    challenges:
+      "Existing tools were not designed for high-dimensional data or extensibility. Analytical workflows were manual, error-prone, and difficult to reproduce across labs. Bridging this gap required working within the constraints of an established software ecosystem while introducing more rigorous, programmatic approaches.",
+
+    approach:
+      "Developed custom plugins and analytical tooling extending FlowJo, integrating statistical methods and automated workflows into existing analysis pipelines. Focused on usability for domain scientists while introducing more structured, reproducible approaches to data exploration and interpretation.",
+
+    role:
+      "Designed and implemented the analytical methods and software components. Worked directly with researchers to translate practical needs into usable tools, combining software development, statistical modeling, and domain expertise.",
+
+    impact:
+      "Enabled researchers to move from manual, heuristic-driven analysis to more reproducible and scalable workflows. The plugin remains in use and has supported multiple published studies, contributing to broader adoption of more rigorous analytical approaches in single-cell research.",
+
+    tags: ["Flow Cytometry", "Single-Cell", "R", "Statistical Modeling", "Scientific Software"]
+  }
 ];
 
 export const articles = [
@@ -124,7 +136,7 @@ The underlying method was not conceptually complex, but no standard solution exi
 
 The solution emerged during a discussion. It was sketched informally and implemented shortly thereafter as a plugin. What mattered was not technical sophistication, but immediacy. A fragmented workflow became operational. People could run it, adjust it, and build on it.
 
-> It stopped being a discussion and became part of the analysis.
+It stopped being a discussion and became part of the analysis.
 
 That is a different category of value.
 

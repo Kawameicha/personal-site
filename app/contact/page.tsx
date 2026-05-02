@@ -41,9 +41,9 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed font-sans font-light">
-          I take on a small number of advisory and consulting engagements each
-          year, as well as speaking invitations for the right events. If there
-          is a strong fit, I’d be glad to connect.
+          I’m always interested in thoughtful conversations around AI, healthcare, and
+          complex systems. For speaking, collaboration, or potential opportunities, feel 
+          free to reach out. If there is a strong fit, I’d be glad to connect.
         </p>
       </div>
 
@@ -81,8 +81,7 @@ export default function ContactPage() {
       <div className="flex items-start gap-4 text-muted-foreground">
         <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
         <p className="text-sm font-sans font-light">
-          {person.location}. Available for remote engagements globally; on-site
-          for Europe.
+          Based in {person.location}; working across European and international contexts.
         </p>
       </div>
     </div>

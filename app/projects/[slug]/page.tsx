@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!project) return {};
   return {
     title: project.title,
-    description: project.context,
+    description: project.oneLiner || project.context,
   };
 }
 
@@ -51,20 +51,42 @@ export default function ProjectPage({ params }: Props) {
         </div>
 
         {/* Title */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground mb-8 leading-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
           {project.title}
         </h1>
+
+        {/* One-liner */}
+        {project.oneLiner && (
+          <p className="text-lg text-muted-foreground mb-10 font-sans font-light leading-relaxed">
+            {project.oneLiner}
+          </p>
+        )}
 
         {/* Divider */}
         <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-12" />
 
-        {/* Content sections */}
+        {/* Content */}
         <div className="space-y-12">
           <Section label="Context" content={project.context} />
-          <Section label="Approach" content={project.approach} />
-          <Section label="Impact" content={project.impact} />
 
-          {/* Tags */}
+          {project.challenges && (
+            <Section label="Challenges" content={project.challenges} />
+          )}
+
+          <Section label="Approach" content={project.approach} />
+
+          {project.role && (
+            <Section label="Role" content={project.role} />
+          )}
+
+          {/* Impact (highlighted) */}
+          {project.impact && (
+            <div className="bg-card border border-border p-6 rounded-sm">
+              <Section label="Impact" content={project.impact} />
+            </div>
+          )}
+
+          {/* Technologies */}
           <div>
             <h2 className="font-mono text-xs tracking-[0.14em] uppercase text-muted-foreground mb-4">
               Technologies
@@ -86,7 +108,13 @@ export default function ProjectPage({ params }: Props) {
   );
 }
 
-function Section({ label, content }: { label: string; content: string }) {
+function Section({
+  label,
+  content,
+}: {
+  label: string;
+  content: string;
+}) {
   return (
     <div>
       <h2 className="font-mono text-xs tracking-[0.14em] uppercase text-muted-foreground mb-4">
