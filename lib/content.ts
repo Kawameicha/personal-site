@@ -72,6 +72,31 @@ export const projects = [
       "Enabled researchers to move from manual, heuristic-driven analysis to more reproducible and scalable workflows. The plugin remains in use and has supported multiple published studies, contributing to broader adoption of more rigorous analytical approaches in single-cell research.",
 
     tags: ["Flow Cytometry", "Single-Cell", "R", "Statistical Modeling", "Scientific Software"]
+  },
+  {
+    slug: "in-code-we-trust",
+    title: "In Code We Trust — a decade of applied ML and data writing",
+    year: "2016 – Present",
+    featured: true,
+    oneLiner:
+      "A long-running technical blog exploring machine learning, data analysis, and scientific computing through practical, hands-on work.",
+
+    context:
+      "Over the past decade, I have maintained a personal blog focused on machine learning, statistical analysis, and scientific programming.\n\nThe goal was not content production, but to externalize thinking, working through real problems, documenting approaches, and making complex analytical concepts accessible through concrete examples.\n\nThe work spans early-stage data exploration, statistical testing, and machine learning workflows.",
+
+    challenges:
+      "Maintaining consistency over a long time horizon while evolving technically. Early articles reflect the state of the field and my own development at the time, requiring continuous adaptation in both depth and perspective.",
+
+    approach:
+      "Articles were developed from first principles and practical use cases, combining code, methodology, and interpretation. The focus was consistently on clarity, reproducibility, and applicability rather than abstraction.\n\nTopics included statistical hypothesis testing, clustering validation, data wrangling, and the use of R for scientific computing. Several articles were directly tied to tools and packages I developed, creating a tight feedback loop between writing, coding, and real-world usage.\n\nOver time, the blog served as both a knowledge base and a platform for refining how complex technical ideas are communicated to different audiences.",
+
+    role:
+      "Author and developer. Defined topics, built accompanying code and tools, and iterated continuously based on real-world use and evolving expertise.",
+
+    impact:
+      "Built a body of work over 10+ years covering applied machine learning and data analysis, with articles used by practitioners in research and applied settings.\n\nMore importantly, this work established a strong foundation in translating complex analytical concepts into usable frameworks, a capability that later extended into product, consulting, and AI system design.",
+
+    tags: ["Machine Learning", "Data Science", "Scientific Computing", "Technical Writing", "R", "Statistics"]
   }
 ];
 

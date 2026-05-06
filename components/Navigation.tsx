@@ -71,7 +71,7 @@ export function Navigation() {
 
           {/* Theme toggle */}
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => { if (!mounted) return; setTheme(theme === "dark" ? "light" : "dark"); }}
             className="ml-2 p-2 rounded-sm text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Toggle theme"
           >
