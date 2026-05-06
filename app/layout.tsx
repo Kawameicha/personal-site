@@ -11,11 +11,22 @@ export const metadata: Metadata = {
     template: "%s | Dr. C. P. Freier",
   },
   description:
-    "AI in healthcare: bridging single-cell science, clinical data, and production-grade systems in regulated environments.",
+    "AI in healthcare: bridging scientific depth, data systems, and real-world deployment.",
+
   openGraph: {
-    title: "Dr. C. P. Freier",
+    title: "Dr. C. P. Freier — AI, Data & Healthcare",
     description:
       "Bridging scientific depth, AI engineering, and product strategy across healthcare and life sciences.",
+    url: "https://www.christoph.freier.fr",
+    siteName: "Christoph Freier",
+    images: [
+      {
+        url: "https://www.christoph.freier.fr/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. C. P. Freier — AI, Data & Healthcare",
+      },
+    ],
     type: "website",
   },
 };
