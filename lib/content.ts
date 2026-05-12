@@ -104,7 +104,7 @@ export const articles = [
   {
     slug: "interfaces-are-the-bottleneck",
     title: "The Real Bottleneck Isn’t Models or Data. It’s Interfaces.",
-    date: "2026-05-30",
+    date: "2026-05-06",
     excerpt:
       "The gap between a new method and its real-world use is where most systems fail. It’s not about models. It’s about interfaces.",
     readingTime: "8 min",
@@ -121,13 +121,13 @@ export const articles = [
 
 export const articleContent: Record<string, string> = {
   "interfaces-are-the-bottleneck": `
-It’s the mid-2010s. I’ve already switched fields once, and I’m working in single-cell biology at a time when the discipline is in full ebullition. We’ve just gone **from a handful of parameters to a few dozen**. So naturally, I move from manual tools to writing my own pipelines. It feels like progress.
+It’s the mid-2010s. I’ve already switched fields once, and I’m working in single-cell biology at a time when the discipline is in full ebullition. We’ve just gone from a handful of parameters to a few dozen. So naturally, I move from manual tools to writing my own pipelines. It feels like progress.
 
-It wasn’t. It was just the beginning.
+It was just the beginning.
 
 ## When Data Outpaced Software
 
-I had the opportunity to work at a moment when single-cell biology began to outpace the software built to support it. The transition from protein measurements to RNA sequencing did not simply increase scale; it fundamentally altered the nature of analysis. Data moved **from tens of parameters to tens of thousands**.
+I had the opportunity to work at a moment when single-cell biology began to outpace the software built to support it. The transition from protein measurements to RNA sequencing did not simply increase scale, it fundamentally altered the nature of analysis. Data moved from tens of parameters to tens of thousands.
 
 The only viable approach was to rely on code written and maintained by bioinformaticians, loosely connected to the scientists generating the data. New algorithms appeared in the literature at high frequency, but their practical use lagged behind. Integration was slow, often brittle, and rarely aligned with how researchers actually worked.
 
@@ -143,19 +143,17 @@ By the time a method was implemented, it was often no longer state of the art. M
 
 Rather than competing on the quality of individual methods, we focused on reducing the time between their appearance and their use in practice. That required a different architecture: one that allowed rapid integration, avoided premature standardization, and remained open to extension.
 
-In practical terms, this meant treating software less as a product and more as an **environment**. The objective was not completeness. It was responsiveness.
+In practical terms, this meant treating software less as a product and more as an environment. The objective was not completeness. It was responsiveness.
 
 ## How Scientists Actually Think
 
 This shift had consequences beyond engineering. It changed how we worked with users. Instead of delivering predefined pipelines, we spent time understanding how researchers actually structured their analysis.
 
-A pattern emerged quickly: scientists do not think in pipelines. They think in questions.
-
-Tools that enforced linear workflows disrupted that process. Tools that allowed recombination and iteration supported it.
+A pattern emerged quickly: scientists do not think in pipelines. They think in questions. Tools that enforced linear workflows disrupted that process. Tools that allowed recombination and iteration supported it.
 
 One example stayed with me.
 
-A research group was combining flow cytometry with single-cell sequencing—sorting live cells based on surface markers, then profiling them at the transcriptomic level. The problem was not generating data. It was reconciling it: matching low-dimensional phenotypic information with high-dimensional RNA profiles.
+A research group was combining flow cytometry with single-cell sequencing, sorting live cells based on surface markers, then profiling them at the transcriptomic level. The problem was not generating data. It was reconciling it: matching low-dimensional phenotypic information with high-dimensional RNA profiles.
 
 The underlying method was not conceptually complex, but no standard solution existed. The process relied on back-and-forth between teams, manual steps, and fragile scripts.
 
@@ -169,7 +167,9 @@ That is a different category of value.
 
 New methods emerged. Users needed them. Integration followed quickly.  Over time, this created a system with properties that competitors struggled to replicate: not because any individual component was superior, but because the overall structure enabled continuous adaptation.
 
-By contrast, competing approaches remained constrained by their own design choices. Systems built around tightly integrated pipelines could not evolve at the same pace. Those that prioritized proprietary methods tended to overstate their generality. In both cases, the failure mode was the same: the system could not keep up with the field.
+By contrast, competing approaches remained constrained by their own design choices. Systems built around tightly integrated pipelines could not evolve at the same pace. Those that prioritized proprietary methods tended to overstate their generality.
+
+In both cases, the failure mode was the same: the system could not keep up with the field.
 
 This dynamic is not unique to computational biology.
 
@@ -181,13 +181,11 @@ The focus is on models: larger architectures, marginal gains, increasing special
 
 The bottleneck lies in the layer that determines whether a model becomes part of a workflow, or remains a demonstration. That layer is still poorly understood, and often treated as an implementation detail. It isn’t. It is where most projects fail. Integrate them into workflows, and allow iteration without excessive friction.
 
-Most efforts underestimate this.
-
 ### The Reality of Healthcare
 
 This becomes particularly evident in regulated environments such as healthcare. Here, performance is only one variable. Systems must also be traceable, interpretable, and integrated into existing processes. You are not deploying a model. You are introducing a system into a constrained environment with real consequences.
 
-Optimizing the model while deferring everything else is a common pattern. Integration comes later—often too late, if at all. The result is predictable: technically sound solutions that never become operational. In fast-moving domains, the primary advantage is not better methods. It is reducing the time between a new idea and its use.
+Optimizing the model while deferring everything else is a common pattern. Integration comes later; often too late, if at all. The result is predictable: technically sound solutions that never become operational. In fast-moving domains, the primary advantage is not better methods. It is reducing the time between a new idea and its use.
 
 That requires **systems that are extensible, aligned with how people work, and capable of integrating change without friction**.
 
