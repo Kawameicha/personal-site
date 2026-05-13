@@ -75,28 +75,53 @@ export const projects = [
   },
   {
     slug: "in-code-we-trust",
-    title: "In Code We Trust — a decade of applied ML and data writing",
+    title: "In Code We Trust: A Decade of Applied ML Writing",
     year: "2016 – Present",
     featured: true,
     oneLiner:
       "A long-running technical blog exploring machine learning, data analysis, and scientific computing through practical, hands-on work.",
 
     context:
-      "Over the past decade, I have maintained a personal blog focused on machine learning, statistical analysis, and scientific programming.\n\nThe goal was not content production, but to externalize thinking, working through real problems, documenting approaches, and making complex analytical concepts accessible through concrete examples.\n\nThe work spans early-stage data exploration, statistical testing, and machine learning workflows.",
+      "Over the past decade, I have maintained a personal blog focused on machine learning, statistical analysis, and scientific programming. The goal was not content production, but to externalize thinking, working through real problems, documenting approaches, and making complex analytical concepts accessible through concrete examples. The work spans early-stage data exploration, statistical testing, and machine learning workflows.",
 
     challenges:
       "Maintaining consistency over a long time horizon while evolving technically. Early articles reflect the state of the field and my own development at the time, requiring continuous adaptation in both depth and perspective.",
 
     approach:
-      "Articles were developed from first principles and practical use cases, combining code, methodology, and interpretation. The focus was consistently on clarity, reproducibility, and applicability rather than abstraction.\n\nTopics included statistical hypothesis testing, clustering validation, data wrangling, and the use of R for scientific computing. Several articles were directly tied to tools and packages I developed, creating a tight feedback loop between writing, coding, and real-world usage.\n\nOver time, the blog served as both a knowledge base and a platform for refining how complex technical ideas are communicated to different audiences.",
+      "Articles were developed from first principles and practical use cases, combining code, methodology, and interpretation. The focus was consistently on clarity, reproducibility, and applicability rather than abstraction. Topics included statistical hypothesis testing, clustering validation, data wrangling, and the use of R for scientific computing. Several articles were directly tied to tools and packages I developed, creating a tight feedback loop between writing, coding, and real-world usage. Over time, the blog served as both a knowledge base and a platform for refining how complex technical ideas are communicated to different audiences.",
 
     role:
       "Author and developer. Defined topics, built accompanying code and tools, and iterated continuously based on real-world use and evolving expertise.",
 
     impact:
-      "Built a body of work over 10+ years covering applied machine learning and data analysis, with articles used by practitioners in research and applied settings.\n\nMore importantly, this work established a strong foundation in translating complex analytical concepts into usable frameworks, a capability that later extended into product, consulting, and AI system design.",
+      "Built a body of work over 10+ years covering applied machine learning and data analysis, with articles used by practitioners in research and applied settings. More importantly, this work established a strong foundation in translating complex analytical concepts into usable frameworks, a capability that later extended into product, consulting, and AI system design.",
 
     tags: ["Machine Learning", "Data Science", "Scientific Computing", "Technical Writing", "R", "Statistics"]
+  },
+  {
+  slug: "llm-feedback-loop-enterprise-ai",
+  title: "Designing Feedback Loops for LLM Systems in Production",
+  year: "2025-2026",
+  featured: true,
+  oneLiner:
+    "Most enterprise AI systems fail because they don’t learn. This project implemented a structured feedback loop to close the gap between system output and user expectation.",
+
+  context:
+    "LLM-based knowledge systems often underperform in real-world environments. Not primarily due to model limitations, but because of a persistent gap between what the system returns and what users actually expect. In enterprise contexts, this gap is rarely measured. Feedback is unstructured, inconsistently captured, and not integrated into system improvement. As a result, systems stagnate despite continuous model iteration.",
+
+  approach:
+    "Designed and implemented a two-step performance framework to systematically identify and reduce this gap. First, a scoring mechanism was introduced to quantify the mismatch between system responses and user expectations across multiple knowledge domains. This transformed qualitative dissatisfaction into a measurable signal. Second, a lightweight, in-product feedback mechanism was deployed, allowing users to provide free-text input directly within their workflow. To ensure scalability and privacy, feedback was aggregated and summarized using LLM-based processing, producing structured insights without exposing individual user data. These insights were then used to iteratively refine prompts and retrieval strategies, establishing a continuous learning loop at the system level.",
+
+  impact:
+    "Initial iterations resulted in a consistent 10–15% improvement in response relevance across multiple knowledge managers. More importantly, the system introduced a scalable mechanism for continuous alignment between AI output and user expectations, addressing a core failure mode of enterprise AI systems.",
+
+  challenges:
+    "Capturing high-quality feedback without disrupting user workflows, while ensuring privacy and usability. Designing a system that produces actionable signals rather than noise, and integrating those signals into an iterative improvement loop without increasing operational complexity.",
+
+  role:
+    "Co-designed the performance framework and feedback architecture. Worked at the interface of product, engineering, and end users to translate qualitative feedback into measurable signals and system-level improvements.",
+
+  tags: ["LLM Systems", "AI Product", "Feedback Loops", "Enterprise AI", "Human-in-the-Loop", "Prompt Engineering", "Information Retrieval"],
   }
 ];
 
@@ -109,14 +134,14 @@ export const articles = [
       "The gap between a new method and its real-world use is where most systems fail. It’s not about models. It’s about interfaces.",
     readingTime: "8 min",
   },
-//  {
-  //  slug: "ai-strategy-healthcare",
-  //  title: "AI Strategy in Healthcare: A Diagnosis",
-  //  date: "2023-08-17",
-  //  excerpt:
-  //    "Most organisations don't have an AI problem. They have a data governance problem and a change management problem.",
-  //  readingTime: "7 min",
-  //},
+  {
+    slug: "agentic-coding-collapses-costs",
+    title: "Agentic Coding Collapses Build Costs. So Why Is Healthcare Software Still Hard?",
+    date: "2026-05-13",
+    excerpt:
+      "When software creation becomes abundant, competitive advantage moves toward trust, workflow ownership, and operational control.",
+    readingTime: "12 min",
+  },
 ];
 
 export const articleContent: Record<string, string> = {
@@ -139,7 +164,7 @@ The constraint was not computational. Nor was it statistical. It was operational
 
 By the time a method was implemented, it was often no longer state of the art. More importantly, these systems imposed rigid workflows on users who neither needed nor wanted them. In a field defined by rapid iteration and intellectual autonomy, this rigidity was not a limitation. It was a structural flaw.
 
-### A Different Approach
+### A different approach
 
 Rather than competing on the quality of individual methods, we focused on reducing the time between their appearance and their use in practice. That required a different architecture: one that allowed rapid integration, avoided premature standardization, and remained open to extension.
 
@@ -151,7 +176,7 @@ This shift had consequences beyond engineering. It changed how we worked with us
 
 A pattern emerged quickly: scientists do not think in pipelines. They think in questions. Tools that enforced linear workflows disrupted that process. Tools that allowed recombination and iteration supported it.
 
-One example stayed with me.
+### One example stayed with me.
 
 A research group was combining flow cytometry with single-cell sequencing, sorting live cells based on surface markers, then profiling them at the transcriptomic level. The problem was not generating data. It was reconciling it: matching low-dimensional phenotypic information with high-dimensional RNA profiles.
 
@@ -163,7 +188,7 @@ It stopped being a discussion and became part of the analysis.
 
 That is a different category of value.
 
-### What Actually Scales
+### What actually scales
 
 New methods emerged. Users needed them. Integration followed quickly.  Over time, this created a system with properties that competitors struggled to replicate: not because any individual component was superior, but because the overall structure enabled continuous adaptation.
 
@@ -181,7 +206,7 @@ The focus is on models: larger architectures, marginal gains, increasing special
 
 The bottleneck lies in the layer that determines whether a model becomes part of a workflow, or remains a demonstration. That layer is still poorly understood, and often treated as an implementation detail. It isn’t. It is where most projects fail. Integrate them into workflows, and allow iteration without excessive friction.
 
-### The Reality of Healthcare
+### The reality of healthcare
 
 This becomes particularly evident in regulated environments such as healthcare. Here, performance is only one variable. Systems must also be traceable, interpretable, and integrated into existing processes. You are not deploying a model. You are introducing a system into a constrained environment with real consequences.
 
@@ -197,4 +222,117 @@ Some of the tools built along the way are still in use. The plugin remains avail
 
 The question is whether our systems keep up.
 `,
+  "agentic-coding-collapses-costs": `
+In a previous piece, I argued that the real bottleneck in AI systems often lives at the interface between humans, workflows, and software rather than inside the model itself. Agentic coding pushes this shift even further. A few years ago, building serious software products in healthcare required sizable engineering organizations before you could even enter the conversation.
+
+Today, that assumption is quietly breaking.
+
+## The Cost Curve Snapped
+
+Small teams equipped with increasingly agentic development workflows can prototype sophisticated applications in days rather than months. Requirements become executable. Documentation, testing, integration scaffolding, and implementation loops increasingly collapse into the same accelerated pipeline.
+
+The mechanics of software production are changing rapidly, and in many ways for the better. But there is a mistake hidden inside the current excitement around agentic coding: many people assume that if software becomes dramatically cheaper to build, success automatically becomes easier.
+
+In regulated industries like healthcare, the opposite may happen.
+
+Because the hard part did not disappear. It simply moved. When build costs collapse, competitive advantage migrates elsewhere: toward distribution, governance, workflow integration, trust, and operational reliability.
+
+## Cheap Build Does Not Mean Easy Success
+
+Traditional software engineering largely optimized human implementation capacity: translating specifications through written code into execution.
+
+Agentic workflows increasingly invert that relationship. The limiting factor becomes defining the right problem, constraining scope, and validating outputs.
+
+The acceleration is not only in generation but also integration. Tool ecosystems and standardized interfaces increasingly reduce the friction of assembling complex systems. As generation and integration both accelerate, many people conclude that barriers to entry are disappearing altogether.
+
+In regulated markets, that conclusion is often wrong.
+
+### A working demo is not market entry
+
+In consumer software, a functional product may already be enough to test adoption. Healthcare operates differently.
+
+A prototype is not deployment.
+
+A deployment is not adoption.
+
+And adoption is not operational trust.
+
+### The real barriers begin after the demo works.
+
+Healthcare software is rarely evaluated as a standalone product. It is evaluated as part of a much larger operational system composed of procurement processes, interoperability constraints, clinical workflows, validation requirements, and organizational risk management.
+
+In practice, this means the application itself is often the easiest part.
+
+I have repeatedly seen technically impressive systems struggle not because the underlying capability was weak, but because integration into existing operational environments proved far harder than the original engineering effort.
+
+The challenge was not simply building the software. It was earning the right to operate inside already complex systems.
+
+### The app is no longer the moat
+
+As agentic systems reduce the cost of producing features, features themselves become less defensible.
+
+Competitive pressure shifts elsewhere: toward workflow ownership, operational guarantees, embedded distribution, governance, and trust accumulated over time.
+
+The moat increasingly stops being the application itself. It becomes the permission to operate.
+
+## Where The Barriers Reappear
+
+### Barrier #1 — Distribution
+
+The best software in the world, however cheap, still loses if nobody encounters it inside their existing workflow.
+
+I saw a similar dynamic years ago during the expansion of high-dimensional single-cell analysis. Tasks that previously required highly specialized scripting or manual analysis became increasingly automated and accessible.
+
+But greater technical accessibility did not eliminate operational concerns. The question increasingly became not only: “Can the system do this?”, but: “Under what constraints is this system allowed to act?”
+
+This creates a paradox: even as building software becomes easier, gaining meaningful access to users may become harder. The more I work in regulated environments, the less I believe software capability alone determines adoption.
+
+### Barrier #2 — Trust
+
+Agentic systems introduce a new category of operational risk: autonomous or semi-autonomous execution inside critical environments.
+
+In regulated environments, I’ve repeatedly seen technically impressive systems stall not because the underlying capability was weak, but because organizations could not operationalize trust around them.
+
+The challenge was traceability, accountability, reproducibility, and integration into existing validation processes. Trust in healthcare is cumulative and asymmetrical. Reliability takes years to establish, while a single failure can destroy adoption.
+
+In that context, autonomy is not merely a feature. It is a liability surface.
+
+### Barrier #3 — Workflow integration
+
+One lesson I’ve learned repeatedly in enterprise healthcare environments is that technically functional software and operationally adoptable software are often completely different products.
+
+One of the most persistent misconceptions in AI is that adoption is primarily a model problem. In practice, many failures occur much later, during operational integration.
+
+Healthcare systems are extraordinarily complex environments composed of fragmented data flows, legacy infrastructures, overloaded users, and tightly coupled operational processes.
+
+In healthcare, the last mile is often most of the work. Adoption frequently becomes a systems integration problem wearing an AI costume.
+
+## The New Moat
+
+If software production becomes increasingly abundant, where does defensibility live? Increasingly, not in raw feature creation.
+
+In regulated environments, competitive advantage starts accumulating around workflow ownership, operational trust, governance infrastructure, integration depth, and validated reliability over time.
+
+Healthcare organizations rarely optimize for novelty alone. They optimize for continuity, accountability, and operational risk. This changes the competitive landscape significantly. The advantage shifts from:
+
+> “Who can build?”
+
+to:
+
+> “Who can safely operate at scale?”
+
+Paradoxically, cheaper software creation may strengthen some incumbents rather than weaken them, because distribution, trust, and workflow ownership become even more important once feature creation commoditizes.
+
+## Build Is Becoming Abundant
+
+Agentic coding represents a genuine structural shift in software creation.
+
+Small teams can now produce capabilities that previously required far larger organizations. The economics of software production are changing rapidly. But in healthcare and other regulated industries, cheaper software creation does not eliminate barriers to entry. 
+
+It relocates them. Toward trust. Toward workflow ownership. Toward governance, operational integration, and accumulated evidence over time. The more software creation becomes abundant, the more operational credibility becomes scarce.
+
+The app is no longer the moat.
+
+Operating permission is.
+`
 };
