@@ -192,14 +192,21 @@ export default function ArticlePage({ params }: Props) {
 
       <article className="max-w-2xl">
         {/* Meta */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="font-mono text-xs text-muted-foreground">
-            {formatDate(article.date)}
-          </span>
-          <span className="text-border">·</span>
-          <span className="font-mono text-xs text-muted-foreground">
-            {article.readingTime}
-          </span>
+        <div className="flex items-end justify-between mb-6">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-muted-foreground">
+              {formatDate(article.date)}
+            </span>
+            <span className="text-border">·</span>
+            <span className="font-mono text-xs text-muted-foreground">
+              {article.readingTime}
+            </span>
+          </div>
+          <img
+            src="/avatar.jpg"
+            alt="Dr. C. P. Freier"
+            className="w-20 h-24 rounded-full object-cover opacity-90 shrink-0"
+          />
         </div>
 
         {/* Title */}

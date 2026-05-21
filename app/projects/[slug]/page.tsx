@@ -38,16 +38,23 @@ export default function ProjectPage({ params }: Props) {
 
       <div className="max-w-3xl">
         {/* Meta */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="font-mono text-xs text-muted-foreground">
-            {project.year}
-          </span>
-          <span className="text-border">·</span>
-          {project.tags.slice(0, 2).map((tag) => (
-            <span key={tag} className="font-mono text-xs text-muted-foreground">
-              {tag}
+        <div className="flex items-end justify-between mb-6">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-muted-foreground">
+              {project.year}
             </span>
-          ))}
+            <span className="text-border">·</span>
+            {project.tags.slice(0, 2).map((tag) => (
+              <span key={tag} className="font-mono text-xs text-muted-foreground">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <img
+            src="/avatar.jpg"
+            alt="Dr. C. P. Freier"
+            className="w-20 h-24 rounded-full object-cover opacity-90 shrink-0"
+          />
         </div>
 
         {/* Title */}

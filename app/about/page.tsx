@@ -52,13 +52,10 @@ const selected = [
   "Experience across 20+ countries (Europe & US)",
   "Led €M-scale business and delivery activities",
   "Hands-on design and delivery of AI systems",
-  "From single-cell analysis to GenAI systems",
   "Data platforms in regulated environments",
   "Bridging product, engineering, and business",
-  "Flow cytometry & single-cell expertise",
   "AI/ML, data platforms, and GenAI applications",
   "Client-facing roles across consulting & delivery",
-  "Strategic execution across the stack",
 ];
 
 export default function AboutPage() {
@@ -84,22 +81,29 @@ export default function AboutPage() {
             </p>
           ))}
         </div>
-
-        {/* Selected facts */}
-        <div className="lg:pt-1">
-          <h2 className="font-mono text-xs tracking-[0.14em] uppercase text-muted-foreground mb-6">
-            Background
-          </h2>
-          <ul className="space-y-3">
-            {selected.map((item) => (
-              <li
-                key={item}
-                className="text-[0.875rem] text-muted-foreground leading-snug font-sans font-light border-b border-border pb-3 last:border-0 last:pb-0"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+        
+        {/* Photo + selected facts */}
+        <div className="lg:pt-1 flex flex-col gap-10">
+          <img
+            src="/avatar.jpg"
+            alt="Dr. C. P. Freier"
+            className="w-40 h-48 rounded-full object-cover opacity-90 mx-auto"
+          />
+          <div>
+            <h2 className="font-mono text-xs tracking-[0.14em] uppercase text-muted-foreground mb-6">
+              Background
+            </h2>
+            <ul className="space-y-3">
+              {selected.map((item) => (
+                <li
+                  key={item}
+                  className="text-[0.875rem] text-muted-foreground leading-snug font-sans font-light border-b border-border pb-3 last:border-0 last:pb-0"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

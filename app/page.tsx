@@ -18,7 +18,9 @@ function formatDate(dateStr: string) {
 
 export default function HomePage() {
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
-  const recentArticles = articles.slice(0, 3);
+  const recentArticles = [...articles]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3);
 
   return (
     <div>
@@ -104,6 +106,54 @@ export default function HomePage() {
         <div className="h-px bg-border" />
       </div>
 
+      {/* ─── WRITING ──────────────────────────────────────────────────── */}
+      <section className="max-w-5xl mx-auto px-6 py-24">
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-6" />
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground">
+              Selected Writing
+            </h2>
+          </div>
+          <Link
+            href="/writing"
+            className="hidden sm:inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-sans"
+          >
+            All articles <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="space-y-0 divide-y divide-border">
+          {recentArticles.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/writing/${article.slug}`}
+              className="group flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-8 py-6 hover:bg-card/50 -mx-6 px-6 transition-colors"
+            >
+              <span className="font-mono text-xs text-muted-foreground shrink-0 pt-0.5 min-w-[7rem]">
+                {formatDate(article.date)}
+              </span>
+              <div className="flex-1">
+                <h3 className="font-serif text-lg sm:text-xl text-foreground group-hover:text-foreground/90 mb-1 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed font-sans font-light">
+                  {article.excerpt}
+                </p>
+              </div>
+              <span className="font-mono text-xs text-muted-foreground shrink-0">
+                {article.readingTime}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="h-px bg-border" />
+      </div>
+
       {/* ─── SELECTED WORK ────────────────────────────────────────────── */}
       <section className="max-w-5xl mx-auto px-6 py-24">
         <div className="flex items-end justify-between mb-12">
@@ -169,54 +219,6 @@ export default function HomePage() {
           >
             All projects <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* ─── WRITING ──────────────────────────────────────────────────── */}
-      <section className="max-w-5xl mx-auto px-6 py-24">
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-6" />
-            <h2 className="font-serif text-3xl sm:text-4xl text-foreground">
-              Writing
-            </h2>
-          </div>
-          <Link
-            href="/writing"
-            className="hidden sm:inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-sans"
-          >
-            All articles <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-
-        <div className="space-y-0 divide-y divide-border">
-          {recentArticles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/writing/${article.slug}`}
-              className="group flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-8 py-6 hover:bg-card/50 -mx-6 px-6 transition-colors"
-            >
-              <span className="font-mono text-xs text-muted-foreground shrink-0 pt-0.5 min-w-[7rem]">
-                {formatDate(article.date)}
-              </span>
-              <div className="flex-1">
-                <h3 className="font-serif text-lg sm:text-xl text-foreground group-hover:text-foreground/90 mb-1 transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-sans font-light">
-                  {article.excerpt}
-                </p>
-              </div>
-              <span className="font-mono text-xs text-muted-foreground shrink-0">
-                {article.readingTime}
-              </span>
-            </Link>
-          ))}
         </div>
       </section>
 

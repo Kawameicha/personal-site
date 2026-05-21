@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Writings on AI, data, and the organisational realities behind success and failure.",
 };
 
+const ARTICLES_PER_PAGE = 5;
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-GB", {
     year: "numeric",
@@ -16,7 +18,23 @@ function formatDate(dateStr: string) {
   });
 }
 
-export default function WritingPage() {
+interface Props {
+  searchParams: { page?: string };
+}
+
+export default function WritingPage({ searchParams }: Props) {
+  const sorted = [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const totalPages = Math.ceil(sorted.length / ARTICLES_PER_PAGE);
+  const currentPage = Math.min(
+    Math.max(Number(searchParams.page) || 1, 1),
+    totalPages
+  );
+  const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const pageArticles = sorted.slice(start, start + ARTICLES_PER_PAGE);
+
   return (
     <div className="max-w-5xl mx-auto px-6 pt-16 pb-28">
       {/* Header */}
@@ -31,8 +49,8 @@ export default function WritingPage() {
       </div>
 
       {/* Article list */}
-      <div className="space-y-0 divide-y divide-border">
-        {articles.map((article) => (
+      <div className="space-y-0 divide-y divide-border mb-16">
+        {pageArticles.map((article) => (
           <Link
             key={article.slug}
             href={`/writing/${article.slug}`}
@@ -63,6 +81,25 @@ export default function WritingPage() {
           </Link>
         ))}
       </div>
+
+      {/* Pagination — only shown when more than one page */}
+      {totalPages > 1 && (
+        <div className="flex items-center gap-2">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <Link
+              key={page}
+              href={`/writing?page=${page}`}
+              className={`font-mono text-xs px-3 py-1.5 rounded-sm border transition-colors ${
+                page === currentPage
+                  ? "border-foreground text-foreground"
+                  : "border-border text-muted-foreground hover:border-foreground/50 hover:text-foreground"
+              }`}
+            >
+              {page}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
