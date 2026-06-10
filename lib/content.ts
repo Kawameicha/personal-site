@@ -595,7 +595,7 @@ And the paradox tightens from there. Organizations so focused on avoiding the vi
 
 The safest decision is not always the one that waits longest. Institutions that optimize for avoiding visible mistakes eventually lose the capacity to recognize invisible ones. By the time the cost of inaction becomes legible, it has usually been paid many times over.
 `,
-  "why-the-person-holding-the-map-still-": `
+  "why-the-person-holding-the-map-still-matters": `
 There is a distinction that almost everyone agrees with in principle and almost no one applies in practice: the map is not the territory. We know this. We can say it fluently. And then we walk into a meeting and spend forty minutes debating whether a statistical reduction faithfully represents the data it reduced, as though the whole point wasn't that it doesn't.
 
 The confusion is understandable. Models feel authoritative. A visual representation of ten thousand single data points, colored by cluster, has the aesthetic of a finding rather than a choice. A logistic regression predicting hospital readmission looks like knowledge rather than a probabilistic judgment. When something is rendered visually, numerically, formally, it becomes easy to mistake the rendering for the thing rendered. The map starts to feel like the territory. And once it does, we begin making a specific and very costly error: demanding from the model a fidelity it was never designed to provide.
