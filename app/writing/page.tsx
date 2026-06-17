@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { articles } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Writings",
@@ -23,9 +23,7 @@ interface Props {
 }
 
 export default function WritingPage({ searchParams }: Props) {
-  const sorted = [...articles].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const sorted = getArticles();
 
   const totalPages = Math.ceil(sorted.length / ARTICLES_PER_PAGE);
   const currentPage = Math.min(

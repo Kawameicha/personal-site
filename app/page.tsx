@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Network, Telescope, Target, Dna } from "lucide-react";
-import { person, pillars, projects, articles } from "@/lib/content";
+import { person, pillars, projects } from "@/lib/content";
+import { getArticles } from "@/lib/articles";
 
 const iconMap: Record<string, React.ReactNode> = {
   "flask-conical": <Dna className="h-5 w-5" />,
@@ -18,9 +19,7 @@ function formatDate(dateStr: string) {
 
 export default function HomePage() {
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
-  const recentArticles = [...articles]
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .slice(0, 3);
+  const recentArticles = getArticles().slice(0, 3);
 
   return (
     <div>
