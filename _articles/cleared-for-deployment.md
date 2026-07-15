@@ -1,6 +1,6 @@
 ---
 title: "Cleared for Deployment?"
-date: "2026-7-08"
+date: "2026-07-08"
 excerpt: "Before an aircraft enters controlled airspace, someone explicitly authorizes the crossing. Clinical AI has no equivalent moment. Models routinely move between hospitals without anyone formally assessing whether the patients, documentation practices, and workflows resemble those they were trained on."
 readingTime: "16 min"
 ---

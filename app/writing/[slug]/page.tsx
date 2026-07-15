@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: Props) {
         All writing
       </Link>
 
-      <article className="max-w-2xl">
+      <div className="max-w-2xl">
         {/* Meta */}
         <div className="flex items-end justify-between mb-6">
           <div className="flex items-center gap-4">
@@ -75,7 +75,25 @@ export default async function ArticlePage({ params }: Props) {
         <p className="text-muted-foreground text-xl leading-relaxed mb-10 font-sans font-light italic">
           {article.excerpt}
         </p>
+      </div>
 
+      {/* Cover illustration */}
+      {article.image && (
+        <figure className="my-14 max-w-4xl">
+          <img
+            src={article.image}
+            alt={article.imageAlt ?? article.title}
+            className="w-full aspect-[3/2] object-cover rounded-sm"
+          />
+          {article.imageCaption && (
+            <figcaption className="mt-4 font-serif text-sm italic text-muted-foreground">
+              {article.imageCaption}
+            </figcaption>
+         )}
+        </figure>
+      )}
+
+      <article className="max-w-2xl">
         {/* Divider */}
         <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-12" />
 

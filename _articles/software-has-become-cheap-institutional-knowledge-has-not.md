@@ -1,5 +1,5 @@
 ---
-title: "Software Has Become Cheap. Institutional Knowledge Has Not."
+title: "Software Has Become Cheap. Institutional Knowledge Has Not"
 date: "2026-07-01"
 excerpt: "Agentic coding has made software dramatically cheaper to build. But it has also exposed a different bottleneck: understanding how organizations actually work. As implementation costs collapse, institutional knowledge, not code, becomes the scarce resource that determines whether transformation succeeds."
 readingTime: "14 min"
