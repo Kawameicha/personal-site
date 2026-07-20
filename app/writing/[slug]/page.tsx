@@ -37,71 +37,75 @@ export default async function ArticlePage({ params }: Props) {
   if (!data) notFound();
 
   return (
-    <div className="max-w-5xl mx-auto px-6 pt-12 pb-28">
+    <div className="pb-28">
       {/* Back link */}
-      <Link
-        href="/writing"
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-sans mb-16"
-      >
-        <ArrowLeft className="h-3.5 w-3.5" />
-        All writing
-      </Link>
-
-      <div className="max-w-2xl">
-        {/* Meta */}
-        <div className="flex items-end justify-between mb-6">
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-xs text-muted-foreground">
-              {formatDate(article.date)}
-            </span>
-            <span className="text-border">·</span>
-            <span className="font-mono text-xs text-muted-foreground">
-              {article.readingTime}
-            </span>
-          </div>
-          <img
-            src="/avatar.jpg"
-            alt="Dr. C. P. Freier"
-            className="w-20 h-24 rounded-full object-cover opacity-90 shrink-0"
-          />
-        </div>
-
-        {/* Title */}
-        <h1 className="font-serif text-4xl sm:text-5xl text-foreground mb-6 leading-tight">
-          {article.title}
-        </h1>
-
-        {/* Standfirst */}
-        <p className="text-muted-foreground text-xl leading-relaxed mb-10 font-sans font-light italic">
-          {article.excerpt}
-        </p>
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <Link
+          href="/writing"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          All writing
+        </Link>
       </div>
 
-      {/* Cover illustration */}
-      {article.image && (
-        <figure className="my-14 max-w-4xl">
-          <img
-            src={article.image}
-            alt={article.imageAlt ?? article.title}
-            className="w-full aspect-[3/2] object-cover rounded-sm"
-          />
+      {/* Hero: illustration with title superimposed */}
+      {article.image ? (
+        <figure className="relative mt-8 mx-auto max-w-6xl px-6">
+          <div className="relative w-full aspect-[3/2] overflow-hidden rounded-sm">
+            <img
+              src={article.image}
+              alt={article.imageAlt ?? article.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Scrim covers the negative-space top third where the title sits */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-transparent" />
+
+            <div className="absolute inset-x-0 top-0 p-6 sm:p-10">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="font-mono text-xs text-white/70">
+                  {formatDate(article.date)}
+                </span>
+                <span className="text-white/30">·</span>
+                <span className="font-mono text-xs text-white/70">
+                  {article.readingTime}
+                </span>
+              </div>
+              <h1 className="font-serif text-4xl sm:text-6xl text-white leading-tight max-w-3xl">
+                {article.title}
+              </h1>
+            </div>
+          </div>
           {article.imageCaption && (
-            <figcaption className="mt-4 font-serif text-sm italic text-muted-foreground">
+            <figcaption className="mt-4 font-serif text-sm italic text-muted-foreground max-w-2xl">
               {article.imageCaption}
             </figcaption>
-         )}
+          )}
         </figure>
+      ) : (
+        <div className="max-w-5xl mx-auto px-6 mt-8">
+          <h1 className="font-serif text-4xl sm:text-5xl text-foreground mb-6 leading-tight max-w-2xl">
+            {article.title}
+          </h1>
+        </div>
       )}
 
-      <article className="max-w-2xl">
-        {/* Divider */}
-        <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-12" />
+      {/* Excerpt row, now below the illustration */}
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-2xl mt-10 flex items-start justify-between gap-8">
+          <p className="text-muted-foreground text-xl leading-relaxed font-sans font-light italic">
+            {article.excerpt}
+          </p>
+        </div>
 
-        <div
-          className="prose-article"
-          dangerouslySetInnerHTML={{ __html: data.contentHtml }}
-        />
-      </article>
+        <article className="max-w-2xl mt-10">
+          <span className="block w-10 h-px bg-[hsl(var(--accent))] mb-12" />
+          <div
+            className="prose-article"
+            dangerouslySetInnerHTML={{ __html: data.contentHtml }}
+          />
+        </article>
+      </div>
     </div>
   );
 }
