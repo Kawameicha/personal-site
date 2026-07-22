@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { getArticles, getArticleBySlug } from "@/lib/articles";
+import { getArticles, getArticleBySlug, getAdjacentArticles, getRelatedArticles } from "@/lib/articles";
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 interface Props {
   params: { slug: string };
@@ -30,15 +31,18 @@ function formatDate(dateStr: string) {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const article = getArticles().find((a) => a.slug === params.slug);
+  const articles = getArticles();
+  const article = articles.find((a) => a.slug === params.slug);
   if (!article) notFound();
 
   const data = await getArticleBySlug(params.slug);
   if (!data) notFound();
 
+  const { previous, next } = getAdjacentArticles(articles, params.slug);
+  const related = getRelatedArticles(articles, params.slug, 9);
+
   return (
     <div className="pb-28">
-      {/* Back link */}
       <div className="max-w-5xl mx-auto px-6 pt-12">
         <Link
           href="/writing"
@@ -60,7 +64,6 @@ export default async function ArticlePage({ params }: Props) {
             />
             {/* Scrim covers the negative-space top third where the title sits */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-transparent" />
-
             <div className="absolute inset-x-0 top-0 p-6 sm:p-10">
               <div className="flex items-center gap-4 mb-4">
                 <span className="font-mono text-xs text-white/70">
@@ -90,7 +93,6 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       )}
 
-      {/* Excerpt row, now below the illustration */}
       <div className="max-w-5xl mx-auto px-6">
         <div className="max-w-2xl mt-10 flex items-start justify-between gap-8">
           <p className="text-muted-foreground text-xl leading-relaxed font-sans font-light italic">
@@ -105,7 +107,28 @@ export default async function ArticlePage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: data.contentHtml }}
           />
         </article>
+
+        <nav className="max-w-2xl mt-20 pt-10 border-t border-border grid grid-cols-2 gap-8">
+          {previous ? (
+            <Link href={`/writing/${previous.slug}`} className="group" aria-label={`Previous article: ${previous.title}`}>
+              <span className="block font-mono text-xs text-muted-foreground mb-2">Previous</span>
+              <span className="font-serif text-lg group-hover:text-[hsl(var(--accent))] transition-colors">
+                {previous.title}
+              </span>
+            </Link>
+          ) : <div />}
+          {next ? (
+            <Link href={`/writing/${next.slug}`} className="group text-right" aria-label={`Next article: ${next.title}`}>
+              <span className="block font-mono text-xs text-muted-foreground mb-2">Next</span>
+              <span className="font-serif text-lg group-hover:text-[hsl(var(--accent))] transition-colors">
+                {next.title}
+              </span>
+            </Link>
+          ) : <div />}
+        </nav>
       </div>
+
+      {related.length > 0 && <RelatedArticles articles={related} />}
     </div>
   );
 }

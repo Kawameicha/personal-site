@@ -1,8 +1,9 @@
 ---
 title: "Explainability Is Not About Explaining the Model"
 date: "2026-05-20"
-excerpt: "In healthcare and science, trust rarely comes from understanding every internal parameter. Explainability is less about perfect transparency than about building systems humans can safely reason with."
+excerpt: "In healthcare and science, trust rarely comes from understanding every internal parameter. Explainability is about building systems people can safely reason with, not exposing every detail of how they work."
 readingTime: "12 min"
+tags: ["trust", "human", "judgment"]
 ---
 
 Long before large language models, people were already dealing with different versions of the same debate: whether complex systems could be trusted when their internal representations were difficult to explain directly.

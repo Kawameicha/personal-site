@@ -1,8 +1,9 @@
 ---
 title: "The Feedback Loop Nobody Built"
 date: "2026-06-17"
-excerpt: "Most healthcare AI governance focuses on deployment, validation, and compliance. Far less attention is paid to what happens afterward. When nobody owns the process of monitoring real-world performance, clinician adaptation becomes the only feedback loop that reliably functions."
+excerpt: "Healthcare AI governance focuses heavily on deployment and validation. Without someone responsible for learning from real-world performance, clinicians become the only feedback loop that reliably functions."
 readingTime: "12 min"
+tags: ["deployment", "validation", "workflow"]
 ---
 
 There is a version of healthcare AI deployment that looks like success. The model is validated on a held-out test set. Performance metrics are acceptable. Clinical leadership signs off. The system goes live. Clinicians receive alerts, risk scores, or decision support outputs. Some act on these. Most of the time, nothing obviously bad happens.

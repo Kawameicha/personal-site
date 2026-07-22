@@ -1,8 +1,9 @@
 ---
 title: "Agentic Coding Collapses Build Costs. So Why Is Healthcare Software Still Hard?"
 date: "2026-05-13"
-excerpt: "As agentic coding drives software creation costs toward zero, competitive advantage shifts toward workflow ownership, governance, operational trust, and the permission to operate."
+excerpt: "Agentic coding is making software dramatically cheaper to build. As implementation costs collapse, competitive advantage shifts toward workflow ownership, governance, and the permission to operate."
 readingTime: "8 min"
+tags: ["agentic", "workflow", "software"]
 ---
 
 In a previous piece, I argued that the real bottleneck in AI systems often lives at the interface between humans, workflows, and software rather than inside the model itself. Agentic coding pushes this shift even further. A few years ago, building serious software products in healthcare required sizable engineering organizations before you could even enter the conversation.

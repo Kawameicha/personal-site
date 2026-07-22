@@ -1,8 +1,9 @@
 ---
 title: "The Real Bottleneck Isn’t Models or Data. It’s Interfaces"
 date: "2026-05-06"
-excerpt: "In fast-moving scientific and AI environments, the real constraint is rarely computation alone. Systems succeed or fail at the interface between methods, workflows, and human adaptation."
+excerpt: "Computation is no longer the primary constraint in scientific software. Systems succeed or fail at the interface between methods, workflows, and the people expected to use them."
 readingTime: "8 min"
+tags: ["workflow", "human", "software"]
 ---
 
 It’s the mid-2010s. I’ve already switched fields once, and I’m working in single-cell biology at a time when the field was evolving rapidly. We’ve just gone from a handful of parameters to a few dozen. So naturally, I move from manual tools to writing my own pipelines. It feels like progress.

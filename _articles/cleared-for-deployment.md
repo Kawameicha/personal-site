@@ -1,8 +1,9 @@
 ---
 title: "Cleared for Deployment?"
 date: "2026-07-08"
-excerpt: "Before an aircraft enters controlled airspace, someone explicitly authorizes the crossing. Clinical AI has no equivalent moment. Models routinely move between hospitals without anyone formally assessing whether the patients, documentation practices, and workflows resemble those they were trained on."
+excerpt: "Aviation requires explicit authorization before entering controlled airspace. Clinical AI has no equivalent moment, even when models move into hospitals that differ fundamentally from those they were trained on."
 readingTime: "16 min"
+tags: ["deployment", "validation", "models"]
 ---
 
 Imagine a sepsis prediction model trained in a tertiary referral hospital being deployed in a rural emergency department. The integration succeeds. The dashboard loads. Clinicians begin acting on risk scores. From an implementation perspective, everything works. But nobody pauses to ask the question that matters most: does this hospital actually resemble the one the model learned from? In most hospitals, that question belongs to nobody.

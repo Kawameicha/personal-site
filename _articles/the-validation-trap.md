@@ -1,8 +1,9 @@
 ---
 title: "The Validation Trap"
 date: "2026-06-03"
-excerpt: "Validation exists to reduce uncertainty, not eliminate it. Yet many organizations quietly transform validation into something else entirely: a mechanism for avoiding decisions. The result is not caution. It is a different kind of risk."
+excerpt: "Validation exists to reduce uncertainty, not eliminate it. When organizations treat it as a substitute for judgment, they exchange one kind of risk for another: avoiding decisions until uncertainty disappears."
 readingTime: "14 min"
+tags: ["validation", "judgment", "trust"]
 ---
 
 There is a sentence I have heard more times than I can count in regulated environments:

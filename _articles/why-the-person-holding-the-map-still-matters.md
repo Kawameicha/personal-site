@@ -1,8 +1,9 @@
 ---
 title: "Why the Person Holding the Map Still Matters"
 date: "2026-06-10"
-excerpt: "Models are useful precisely because they simplify reality. The mistake is expecting them not to. From clinical scores to AI systems, the real challenge is not building perfect maps, but developing the judgment to know where their edges are."
+excerpt: "Models are useful precisely because they simplify reality. The real challenge is not building perfect maps, but knowing where they stop being reliable and when human judgment must take over."
 readingTime: "10 min"
+tags: ["judgment", "models", "human"]
 ---
 
 There is a distinction that almost everyone agrees with in principle and almost no one applies in practice: the map is not the territory. We know this. We can say it fluently. And then we walk into a meeting and spend forty minutes debating whether a statistical reduction faithfully represents the data it reduced, as though the whole point wasn't that it doesn't.

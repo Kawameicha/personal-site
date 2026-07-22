@@ -1,8 +1,9 @@
 ---
 title: "The Cost of Knowing What to Believe"
 date: "2026-07-15"
-excerpt: "Computation is no longer software’s scarce resource. Judgment is. Drawing on experiences from scientific software and AI-assisted decision support in healthcare, this essay argues that the real challenge of the AI era is no longer producing answers, but helping institutions decide which answers deserve to be trusted."
+excerpt: "Computation is no longer software’s scarce resource. Judgment is. As AI makes answers increasingly cheap, the harder institutional problem becomes deciding which answers deserve to be trusted, acted upon, and defended."
 readingTime: "14 min"
+tags: ["judgment", "trust", "knowledge"]
 ---
 
 Every generation of software has had a bottleneck. Forty years ago the problem was computation: machines were slow, memory was scarce, and producing a result at all was often the hard part. Today computation is close to free. Agentic systems write code, language models summarize in seconds what once took an afternoon, and a scientific analysis that used to consume a week can now run before the coffee finishes brewing.
