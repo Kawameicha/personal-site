@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  metadataBase: new URL("https://www.christoph.freier.fr"),
 };
 
 export default function RootLayout({

@@ -16,9 +16,40 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticles().find((a) => a.slug === params.slug);
   if (!article) return {};
+
+  const ogImage = article.image
+    ? {
+        url: article.image,
+        width: 1200,
+        height: 630,
+        alt: article.imageAlt ?? article.title,
+      }
+    : {
+        url: "https://www.christoph.freier.fr/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. C. P. Freier — AI, Data & Healthcare",
+      };
+
   return {
     title: article.title,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://www.christoph.freier.fr/articles/${article.slug}`,
+      siteName: "Christoph Freier",
+      images: [ogImage],
+      type: "article",
+      publishedTime: article.date,
+      tags: article.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [ogImage.url],
+    },
   };
 }
 
