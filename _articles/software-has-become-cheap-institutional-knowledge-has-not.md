@@ -3,7 +3,7 @@ title: "Software Has Become Cheap. Institutional Knowledge Has Not"
 date: "2026-07-01"
 excerpt: "Agentic coding has made software dramatically cheaper to build. As implementation costs collapse, institutional knowledge, not code, becomes the scarce resource that determines whether transformation succeeds."
 readingTime: "14 min"
-tags: ["agentic", "knowledge", "workflow"]
+tags: ["agentic", "knowledge", "value"]
 ---
 
 Early in my career I worked on software built almost entirely by former bench scientists. We rarely had to explain why a workflow mattered because we had all performed it ourselves. Looking back, I realize we weren't unusually insightful. What we possessed, without really appreciating it at the time, was institutional knowledge embedded directly inside the development team.
