@@ -1,0 +1,61 @@
+---
+title: "When a Model Learns to Speak"
+date: "2026-08-12"
+excerpt: "A statistical prediction does not become more accurate when it begins speaking in complete sentences. What changes is the kind of authority institutions may quietly grant it."
+readingTime: "14 min"
+tags: ["judgment", "interfaces", "governance"]
+---
+
+On March 12, 2015, Terry Pratchett's own Twitter account announced his death in the voice of Death, the character he had spent four decades writing, the one whose capital-letter voice could make a sentence land without ornament. The line read: AT LAST, SIR TERRY, WE MUST WALK TOGETHER. A great many people who have never read a page of Discworld still remember where they were when they read it.
+
+Compare that to the fact underneath it. A man with a rare, early-onset dementia, diagnosed eight years before, died at home. That sentence is accurate, complete, and forgettable within the week. Pratchett exploited something that conversational AI now forces clinical institutions to confront: give an outcome a voice, even a borrowed one arriving at the right moment, and it stops being a number you file and becomes something you have a relationship with. Anthropomorphism explains why people respond differently to a voice than to a readout. What it doesn’t explain is what happens institutionally once the output itself begins functioning like a colleague’s judgment.
+
+## Readouts and Interlocutors
+
+Call the first category readouts: numbers, waveforms, images, anything sitting on a screen waiting for a trained person to interpret it. An ECG trace is a readout. A blood count is a readout. Call the second category interlocutors: colleagues, people who make a claim, take a position, and can be asked to defend it. What's new about the current generation of clinical software is that the identical statistical output can be delivered as either one. The same prediction becomes a percentage on a chart or a claim in someone's voice, and which category you get is a decision about the interface, not a fact about how reliable the thing actually is.
+
+One side of that split answers to calibration, validation, and population fit, the kind of accountability a reliability figure can actually satisfy. The other answers to reputation, credibility, and judgment built up over years, the kind of accountability nothing but a track record can satisfy. A curve belongs to the first side. A colleague may use curves, but they are accountable on the second.
+
+I spent a good part of my PhD, in immuno-oncology, in front of Kaplan-Meier curves: step functions built from real cohorts, each drop marking someone who didn't make it to the next time point. A curve like that will tell you, for a patient who fits this profile, that five-year survival sits somewhere, say, around sixty-two percent. Nobody argues with a curve. You question the cohort it came from, whether your patient actually resembles it, whether follow-up ran long enough. But you don't have a conversation with a curve. It's a readout, plainly, the same category as a blood count.
+
+Hand over the identical estimate as a sentence instead, this patient has a 62 percent chance of surviving five years, and the underlying model hasn't moved at all, same cohort, same assumptions, same stage and receptor status doing the same work. What changed is the grammar. A number invites a question about the population it came from. A sentence in the active voice reads as a claim, and claims invite us to imagine someone who looked at the evidence and is now telling you what they concluded.
+
+Ask the system why, and suppose it answers: because of tumor stage, nodal involvement, and hormone receptor status. Something further happens, worth being precise about. It carries real information a bare percentage didn't, which features actually drove the estimate. But it's still a redescription of the same statistical association, arranged into a sentence with the rhetorical shape of a colleague's reasoning. The model has never met this patient. It has no acquaintance with the actual consult, the way an oncologist who sat through the biopsy result and the family meeting does.
+
+## Two Kinds of Knowing
+
+Bertrand Russell drew a distinction between knowledge by acquaintance, the direct kind, a headache you’re having right now, and knowledge by description, everything you know only through what others have written or measured. If that distinction is useful here, the model’s apparent self-account belongs entirely on the descriptive side, however fluent it sounds. It has, in effect, read every curve like the one above. It has never sat in a room with a patient.
+
+The difference shows up most clearly once you begin arguing with it. Challenge a colleague’s judgment and they may genuinely reconsider, updating on something real: a detail from the consult they hadn’t weighed properly, a second look at the chart, a case from years ago suddenly recalled differently. Challenge a model’s answer and it produces another justification, sometimes even more persuasive than the first, but there’s nothing behind that second answer that wasn’t already behind the number. It’s still description, rearranged again.
+
+An oncologist carries both kinds at once. They know the same literature, the same curves, the same distribution of outcomes across patients who share this stage and receptor status. What they have that the model doesn’t is acquaintance: this particular consult, this patient’s reaction, the fact that the patient’s last regimen failed in a way the chart doesn’t fully capture. That’s what stands behind a sentence like *I think we should try this next*, spoken by a person rather than generated by a model.
+
+None of this makes physicians some pure well of direct experience. Much of what they know about a disease is also knowledge by description: the same literature, guidelines, and population data the model was trained on. Their advantage is not that they escape population reasoning. It is that they can be held answerable for joining that population evidence to this particular patient, in this room, under these constraints, in a way a model, which faces no consequence either way, cannot.
+
+That conversational interfaces increase anthropomorphic responses is well established elsewhere. Automation bias and authority bias are both documented, language shapes trust, that much isn't in dispute. The stronger empirical claim would be that fluent systems cause institutions to relax validation standards. I do not think that has been shown. The narrower claim is enough: fluent systems invite people to evaluate statistical outputs as if they were acts of judgment.
+
+What I'm arguing sits one layer down from that, and it's narrower. We have governance built for instruments, and governance built for experts, largely inherited rather than designed, and neither was built with a third category in mind: something that produces sentences with the shape of a colleague's combined knowledge while only ever holding half of it. That category barely existed before software could hold up its end of a conversation. Whether the existing apparatus catches up to it is the open question. Put plainly: the danger isn't that these systems produce predictions. It's that an institution can start treating a prediction as a judgment before anything about the prediction has earned the accountability judgment requires.
+
+## The System that Explained Itself
+
+I can't settle that question sitting here, but one case shows roughly what the crossing looks like once it happens. Watson for Oncology predates conversational AI in anything like today's sense, and that's part of why it belongs here: it never held a dialogue with anyone, so it shows the crossing in close to its simplest form, no exchange at all, just a statistical and rule-based recommendation dressed in the rhetorical form of expert judgment. It cited guidelines, ranked treatments, and presented its preferences in a structure that resembled a tumor board’s reasoning. IBM’s partnership with Memorial Sloan Kettering began in 2012, and later reporting showed that the system had been trained in significant part on hypothetical cases and the preferences of a relatively small group of specialists rather than validated outcomes across broad real-world populations. By the time internal and external criticism became public, the tool had already been marketed into hospitals around the world.
+
+Whether the guideline-citing, expert-sounding presentation specifically bought those extra years, as opposed to ordinary institutional inertia around an expensive vendor relationship, isn't something the reporting settles, and I don't want to claim more than it shows. The important point isn’t that Watson failed. It is that the validation question, *What population proves this recommendation works?*, arrived after the system had already learned to sound like expertise.
+
+## The Clearer Case
+
+If Watson shows the danger of an output that sounds like judgment, naviHealth shows the danger of an output that is merely installed where judgment used to be.
+
+UnitedHealth's subsidiary naviHealth ran an algorithm called nH Predict to estimate how many days of post-acute nursing care a Medicare Advantage patient would need after a hospital stay. nH Predict did not sound like a doctor. It produced a projected discharge date, a number drawn from comparisons with prior cases. By interface, it remained a readout. The alleged crossing happened elsewhere: in the workflow around it. What moved it into the other category was policy, not presentation. Reporting and litigation have alleged that case managers were pressured to keep actual stays close to the algorithm’s projections, and that physician judgments could be overridden when they diverged from the number. If that is how the tool functioned, then the label “guide” becomes less important than the practical fact that disagreement had become professionally costly. A readout no one is free to weigh is no longer functioning as a readout.
+
+Together, the two cases run the same crossing through two mechanisms that are supposed to look nothing alike, and that’s exactly the point. Language is one way a statistical output gets promoted into an authority it hasn’t earned. A workflow that makes disagreement costly is another, and needs no language at all. Despite those differences, what the two cases actually share isn’t rhetoric. It’s an output crossing from something meant to be weighed into something that functions as an order, without ever passing through whatever process was supposed to earn that kind of authority.
+
+## What Explanation is Actually Good For
+
+None of this argues for silence. A system willing to say why, in language a junior oncologist can push against the way they’d push against an attending’s read of a scan, is a real improvement over a percentage sitting mute on a report. The explanation becomes a foothold into the reasoning rather than just the conclusion, and that’s probably the strongest argument for building these systems this way.
+
+The difficulty is that the same feature producing the teachable moment also produces automatic deference. A system that answers why convincingly gets evaluated the way a colleague’s answer gets evaluated, and holding that evaluation at arm’s length isn’t the same skill as spotting a faulty pulse oximeter. It is the skill of treating an explanation as evidence without treating fluency as judgment.
+
+None of this required Watson or naviHealth to be malicious, or even careless, particularly. It only required a genuine category to exist without anyone naming it. A model that speaks occupies a different social category than a model that merely displays, and the governance apparatus built up over decades of instruments and decades of colleagues may not be adapted to that shift.
+
+A thermometer doesn't need a reputation. A doctor does. The trouble starts exactly when a piece of software begins borrowing one, mid-sentence, while still being governed, on paper, by rules that were only ever built for the other.
